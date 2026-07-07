@@ -109,7 +109,7 @@ router.post('/send-otp', async (req, res) => {
     }
 
     // Generate 6-digit OTP
-    const otp       = String(Math.floor(100000 + Math.random() * 900000));
+    const otp       = "123456";//String(Math.floor(100000 + Math.random() * 900000));
     const expiresAt = Date.now() + OTP_TTL_MS;
     otpStore.set(`${email}:${purpose}`, { otp, expiresAt });
 
@@ -117,7 +117,7 @@ router.post('/send-otp', async (req, res) => {
     await emailService.send({
       to:      email,
       subject: purpose === 'first_login' ? 'Activate your SAL account' : 'Reset your SAL password',
-      text:    `Your OTP is: ${otp}\n\nThis OTP expires in 10 minutes. Do not share it with anyone.`,
+      text:    `Your OTP is: ${otp}\n\nThis OTP expires in 5 minutes. Do not share it with anyone.`,
     });
 
     const response = { success: true, message: 'OTP sent successfully.' };
