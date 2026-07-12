@@ -17,6 +17,7 @@ dotenv.config();
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -42,7 +43,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 // ── 1. Production environment guard ─────────────────────────────────────────
 function requireProductionEnv() {
   if (!isProduction) return;
-
+  
   const required = [
     'MONGO_URI', 'JWT_ACCESS_SECRET', 'JWT_REFRESH_SECRET',
     'CORS_ORIGIN', 'SUPER_ADMIN_EMAIL', 'SUPER_ADMIN_PASSWORD',
@@ -194,13 +195,12 @@ const noCache = {
     }
   },
 };
-
+app.use('/images',         express.static(path.join(__dirname, 'public', 'images','logo.png')));
 app.use('/shared',         express.static(path.join(__dirname, 'shared'),         noCache));
 app.use('/login',          express.static(path.join(__dirname, 'login'),          noCache));
 app.use('/super-admin',    express.static(path.join(__dirname, 'super-admin'),    noCache));
 app.use('/admin',          express.static(path.join(__dirname, 'admin'),          noCache));
 app.use('/hod',            express.static(path.join(__dirname, 'hod'),            noCache));
-app.use('/teacher',        express.static(path.join(__dirname, 'teacher'),        noCache));
 app.use('/student',        express.static(path.join(__dirname, 'student-parent'), noCache));
 app.use('/student-parent', express.static(path.join(__dirname, 'student-parent'), noCache));
 
