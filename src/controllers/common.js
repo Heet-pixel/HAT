@@ -313,12 +313,12 @@ export async function updateStudentAndSyncParent(filter, rawBody, by) {
 }
 
 const defaultScheduleTimes = [
-  ['09:00', '10:15'],
-  ['10:30', '11:45'],
-  ['12:00', '13:15'],
-  ['14:00', '15:15'],
-  ['15:30', '16:30'],
-  ['16:30', '17:30']
+  ['10:30', '11:30'],
+  ['11:30', '12:30'],
+  ['12:30', '01:00'],
+  ['02:00', '03:00'],
+  ['03:00', '03:10'],
+  ['03:10', '05:10']
 ];
 
 function displayTime(startTime, endTime) {
@@ -524,7 +524,7 @@ export async function findAttendanceTimeConflict({ college, department, course, 
   }).populate('teacher', 'name').select('time teacher subjectName').lean();
   for (const c of candidates) {
     if (!c.time) continue;
-    const [cStart, cEnd] = String(c.time).split(/\s*[-–]\s*/);
+    const [cStart, cEnd] = String(c.time).split(/\s*[-–]\s*/);// attencde marked by another at this slot
     if (timesOverlap(startTime, endTime, cStart, cEnd)) {
       return { message: `${c.teacher?.name || 'Another teacher'} already has attendance marked for this class from ${cStart} to ${cEnd || ''}. No lecture may overlap another for the same class.` };
     }
