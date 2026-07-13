@@ -195,7 +195,7 @@ const noCache = {
     }
   },
 };
-app.use('/teacher', express.static(path.join(__dirname, 'teacher'), noCache));
+app.use('/teacher',        express.static(path.join(__dirname, 'teacher'),        noCache));
 app.use('/shared',         express.static(path.join(__dirname, 'shared'),         noCache));
 app.use('/login',          express.static(path.join(__dirname, 'login'),          noCache));
 app.use('/super-admin',    express.static(path.join(__dirname, 'super-admin'),    noCache));

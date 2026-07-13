@@ -52,10 +52,10 @@ const Dashboard = {
 
     /* stat cards — each is clickable, jumps straight to its section */
     const statCards = [
-      { icon: '📚', label: 'Subjects',      value: stats.totalSubjects   ?? '—', page: 'attendance' },
+      { icon: '📚', label: 'Subjects',      value: stats.totalSubjects   ?? '—', page: 'timetable' },
       { icon: '📊', label: 'Avg Attendance', value: (stats.avgAttendance != null ? stats.avgAttendance + '%' : '—'), page: 'attendance' },
       { icon: '📢', label: 'Notices',        value: stats.totalNotices   ?? '—', page: 'notices' },
-      { icon: '📝', label: 'Pending Marks',  value: stats.pendingMarks   ?? '—', page: 'marks' },
+      // { icon: '📝', label: 'Pending Marks',  value: stats.pendingMarks   ?? '—', page: 'marks' },
     ];
     _el('dash-stats').innerHTML = statCards.map(c => `
       <div class="stat-card" style="cursor:pointer" onclick="Nav.go('${c.page}')">

@@ -200,15 +200,18 @@ textarea {
   gap: 10px;
 }
 .sidebar-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--r-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-  flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sidebar-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .sidebar-brand {
   font-size: 15px;
