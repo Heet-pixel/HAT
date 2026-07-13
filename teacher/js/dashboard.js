@@ -10,7 +10,7 @@ async function loadDashboard() {
 
   // Hero greeting from live profile
   document.getElementById('heroGreeting').textContent = 'Hello, ' + (currentTeacher.name.split(' ')[0] || 'Teacher') + ' 👋';
-  document.getElementById('heroDept').textContent     = currentTeacher.dept + ' • HAT Institute';
+  document.getElementById('heroDept').textContent     = currentTeacher.dept;
 
   // Stat cards — fetch totals from API
   try {

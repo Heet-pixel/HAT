@@ -23,7 +23,7 @@
 <!-- ━━━━━━━━━ SIDEBAR ━━━━━━━━━ -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-icon"><img src="images/logo.png"></div>
+    <div class="logo-icon"><img src="logo.png"></div>
     <div class="logo-text">Eadronix<span>Teacher Portal</span></div>
   </div>
   <div class="sidebar-teacher" onclick="goToPage('profile')" style="cursor:pointer" title="View my profile">
@@ -50,14 +50,19 @@
       <span class="sn-icon">📚</span> Upload Syllabus
     </button>
     <button class="sn-item" id="sni-schedule" onclick="goToPage('schedule'); closeSidebar()">
-      <span class="sn-icon">📅</span> Timetable
+      <span class="sn-icon">📅</span> schedule
     </button>
     <button class="sn-item" id="sni-reports" onclick="goToPage('reports'); closeSidebar()">
       <span class="sn-icon">📊</span> Reports
     </button>
+    <button class="sn-item" id="sni-reports" onclick="logout(); closeSidebar()">
+      <span class="sn-icon">🚪</span> logout
+    </button>
   </nav>
   <div class="sidebar-footer">
     <button class="theme-switch" onclick="toggleTheme()" id="themeBtnSidebar">🌙 Dark Mode</button>
+    <br>
+
   </div>
 </div>
 
@@ -66,8 +71,8 @@
 
   <!-- Top Header -->
   <div class="top-header">
-    <button class="th-hamburger" onclick="toggleSidebar()">━˜°</button>
-    <div class="th-brand">Eadronix <span>Dashboard</span></div>
+    <button class="th-hamburger" onclick="toggleSidebar()">☰</button>
+    <div class="th-brand">Eadronix <span></span></div>
     <div class="th-spacer"></div>
     <div class="th-right">
       <div class="th-teacher-btn">
@@ -533,6 +538,6 @@
 <script src="js/schedule.js"></script>
 <script src="js/notices.js"></script>
 <script src="js/reports.js"></script>
-
+<script src="js/logout.js"></script>
 </body>
 </html>

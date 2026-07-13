@@ -102,33 +102,81 @@ function renderStudentList(){
   if(q){const si=document.getElementById('stuSearchInput');if(si){si.focus();si.selectionStart=si.selectionEnd=si.value.length;}}
 }
 
-function studentRowHTML(s){
-  const initials=(s.name||'ST').split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
-  const status=(s.status||'Active');
-  const avatarHtml = s.avatar
-    ? `<img class="student-avatar" src="${s.avatar}" alt="${_html(s.name||'Student')}">`
-    : `<div class="student-avatar student-avatar-initials">${initials}</div>`;
-  return `<div class="student-row" id="srow_${s.id}">
-    <div class="chk-col ${(stuDeleteMode||stuPromoteMode)?'show':''}"><input type="checkbox" onchange="${stuPromoteMode?'updateStuPromoteSelectedCount()':'updateStuSelectedCount()'}" id="chk_${s.id}"></div>
-    <button class="student-card-main" onclick="openStudentModal('${s.id}')">
-      ${avatarHtml}
-      <div class="student-info">
-        <div class="sname">${_html(s.name||'Student')}</div>
-        <span><b>Roll:</b> ${_html(s.roll||'-')}</span>
-        <span><b>Course:</b> ${_html(s.course||'General')} - Sem ${s.sem||1}</span>
-        <span><b>Phone:</b> ${_html(s.phone||'-')}</span>
-        <span><b>Gender:</b> ${_html(s.gender||'-')}</span>
-        <span><b>Email:</b> ${_html(s.email||'-')}</span>
-        <span><b>Status:</b> <span class="badge badge-green">${_html(status)}</span></span>
-      </div>
-    </button>
-    <div class="student-card-actions">
-      <button class="btn btn-ghost btn-sm" onclick="openStudentModal('${s.id}')">Details</button>
-      <button class="btn btn-primary btn-sm" onclick="openStuMarksModal('${s.id}')">Marks</button>
-    </div>
-  </div>`;
-}
+// function studentRowHTML(s){
+//   const initials=(s.name||'ST').split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+//   const status=(s.status||'Active');
+//   const avatarHtml = s.avatar
+//     ? `<img class="student-avatar" src="${s.avatar}" alt="${_html(s.name||'Student')}">`
+//     : `<div class="student-avatar student-avatar-initials">${initials}</div>`;
+//   return `<div class="student-row" id="srow_${s.id}">
+//     <div class="chk-col ${(stuDeleteMode||stuPromoteMode)?'show':''}"><input type="checkbox" onchange="${stuPromoteMode?'updateStuPromoteSelectedCount()':'updateStuSelectedCount()'}" id="chk_${s.id}"></div>
+//     <button class="student-card-main" onclick="openStudentModal('${s.id}')">
+//       ${avatarHtml}
+//       <div class="student-info">
+//         <div class="sname">${_html(s.name||'Student')}</div>
+//         <span><b>Roll:</b> ${_html(s.roll||'-')}</span>
+//         <span><b>Course:</b> ${_html(s.course||'General')} - Sem ${s.sem||1}</span>
+//         <span><b>Phone:</b> ${_html(s.phone||'-')}</span>
+//         <span><b>Gender:</b> ${_html(s.gender||'-')}</span>
+//         <span><b>Email:</b> ${_html(s.email||'-')}</span>
+//         <span><b>Status:</b> <span class="badge badge-green">${_html(status)}</span></span>
+//       </div>
+//     </button>
+//     <div class="student-card-actions">
+//       <button class="btn btn-ghost btn-sm" onclick="openStudentModal('${s.id}')">Details</button>
+//       <button class="btn btn-primary btn-sm" onclick="openStuMarksModal('${s.id}')">Marks</button>
+//     </div>
+//   </div>`;
+// }
+function studentRowHTML(s) {
+    const initials = (s.name || "ST")
+        .split(" ")
+        .map(w => w[0])
+        .join("")
+        .substring(0, 2)
+        .toUpperCase();
 
+    const status = s.status || "Active";
+
+    const avatarHtml = s.avatar
+        ? `<img class="student-avatar" src="${s.avatar}" alt="${_html(s.name || 'Student')}">`
+        : `<div class="student-avatar student-avatar-initials">${initials}</div>`;
+
+    return `
+    <div class="student-card">
+
+        <div class="student-card-main"
+             onclick="openStudentModal('${s.id}')">
+
+            ${avatarHtml}
+
+            <div class="student-name">
+                ${_html(s.name || "Student")}
+            </div>
+
+            <div class="student-roll">
+                ${_html(s.roll || "-")}
+            </div>
+
+            <div class="student-course">
+                ${_html(s.course || "General")} • Sem ${s.sem || "-"}
+            </div>
+
+            <span class="badge badge-green">
+                ${_html(status)}
+            </span>
+
+        </div>
+
+
+    </div>`;
+}
+//<div class="student-card-actions">
+            // <button class="btn btn-primary btn-sm"
+            //     onclick="event.stopPropagation();openStuMarksModal('${s.id}')">
+            //     Marks
+            // </button>
+        //</div>
 function toggleStuDeleteMode(){stuDeleteMode=!stuDeleteMode; if(stuDeleteMode) stuPromoteMode=false; renderStudentList();}
 function updateStuSelectedCount(){let cnt=document.querySelectorAll("#studentGrid input[type=checkbox]:checked").length;let el=document.getElementById("stuSelectedCount");if(el)el.textContent=cnt+" selected";}
 
