@@ -36,8 +36,7 @@ import { notFound, errorHandler } from './src/middleware/error.js';
 
 // Winston logger (file: src/utils/logger.js)
 import logger from './src/utils/logger.js';
-import sitemapRoute from "./src/routes/sitemap.js";
-app.use("/", sitemapRoute);
+
 
 const __dirname  = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -128,6 +127,8 @@ requireProductionEnv();
 //  Original code had express.static() referenced before app was created.
 const app = express();
 
+import sitemapRoute from "./src/routes/sitemap.js";
+app.use("/", sitemapRoute);
 // ── 5. Security headers ──────────────────────────────────────────────────────
 app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 
