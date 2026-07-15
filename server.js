@@ -36,6 +36,8 @@ import { notFound, errorHandler } from './src/middleware/error.js';
 
 // Winston logger (file: src/utils/logger.js)
 import logger from './src/utils/logger.js';
+import sitemapRoute from "./src/routes/sitemap.js";
+app.use("/", sitemapRoute);
 
 const __dirname  = path.dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === 'production';
@@ -244,9 +246,7 @@ connectDB()
         env: process.env.NODE_ENV || 'development',
         superAdmin: process.env.SUPER_ADMIN_EMAIL || 'superadmin@sal.com',
       });
-      const sitemapRoute = require("./src/routes/sitemap");
 
-app.use("/", sitemapRoute);
 
       // Keep the developer-friendly banner in non-production only
       if (!isProduction) {
