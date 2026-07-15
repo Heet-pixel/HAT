@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/sitemap.xml", async (req, res) => {
   try {
     const smStream = new SitemapStream({
-      hostname: "https://eadronix.com",
+    hostname: "https://www.eadronix.com"
     });
 
     smStream.write({ url: "/", changefreq: "daily", priority: 1.0 });
