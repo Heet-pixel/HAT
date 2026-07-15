@@ -4014,560 +4014,478 @@ body {
    STUDENT CARDS
 ===================================================== */
 
-.student-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(280px,320px));
-    gap:10px;
-    margin-top:20px;
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.student-card{
-    display:flex;
-    flex-direction:column;
+.student-card {
+  display: flex;
+  flex-direction: column;
 }
 
-.student-card-main{
-    width:270px;
-    min-height:160px;
-    background:var(--bg2);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:20px 18px;
+.student-card-main {
+  width: 270px;
+  min-height: 160px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px 18px;
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    cursor:pointer;
-    transition:all .25s ease;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.student-card-main:hover{
-    transform:translateY(-5px);
-    border-color:#4f8cff;
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+.student-card-main:hover {
+  transform: translateY(-5px);
+  border-color: #4f8cff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
 }
 
 .student-avatar,
-.student-avatar-initials{
-    width:72px;
-    height:72px;
-    border-radius:50%;
-    margin-bottom:12px;
+.student-avatar-initials {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin-bottom: 12px;
 }
 
-.student-avatar{
-    object-fit:cover;
-    border:3px solid var(--border);
+.student-avatar {
+  object-fit: cover;
+  border: 3px solid var(--border);
 }
 
-.student-avatar-initials{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.student-avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    font-size:28px;
-    font-weight:700;
+  font-size: 28px;
+  font-weight: 700;
 
-    color:#fff;
+  color: #fff;
 
-    background:linear-gradient(135deg,#4f8cff,#7c3aed);
+  background: linear-gradient(135deg, #4f8cff, #7c3aed);
 }
 
-.student-name{
-    font-size:18px;
-    font-weight:700;
-    color:var(--text);
-    margin-bottom:8px;
+.student-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
 }
 
-.student-roll{
-    font-size:15px;
-    color:var(--text2);
-    margin-bottom:6px;
+.student-roll {
+  font-size: 15px;
+  color: var(--text2);
+  margin-bottom: 6px;
 }
 
-.student-course{
-    font-size:15px;
-    color:var(--text2);
-    margin-bottom:12px;
+.student-course {
+  font-size: 15px;
+  color: var(--text2);
+  margin-bottom: 12px;
 }
 
-.student-card-actions{
-    width:300px;
-    display:flex;
-    justify-content:center;
-    margin-top:10px;
+.student-card-actions {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.student-card-actions .btn{
-    width:120px;
-    height:38px;
-    border-radius:10px;
+.student-card-actions .btn {
+  width: 120px;
+  height: 38px;
+  border-radius: 10px;
 }
 
 /* =========================================================
                     SCHEDULE PAGE
 ========================================================= */
 
-.schedule-col{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:12px;
-    margin-bottom:16px;
+.schedule-col {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
 }
 
-.schedule-col-title{
-    background:linear-gradient(90deg,#4f8cff,#33d6b5);
-    color:#fff;
-    padding:12px;
-    border-radius:12px;
-    text-align:center;
-    font-size:16px;
-    font-weight:700;
-    margin-bottom:14px;
+.schedule-col-title {
+  background: linear-gradient(90deg, #4f8cff, #33d6b5);
+  color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 
-.sched-sem-list{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+.sched-sem-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.sched-sem-wrap{
-    margin:0;
+.sched-sem-wrap {
+  margin: 0;
 }
 
-.sched-sem-btn{
+.sched-sem-btn {
+  background: #232c40;
 
-    background:#232c40;
+  border: 1px solid #34435d;
 
-    border:1px solid #34435d;
+  border-radius: 12px;
 
-    border-radius:12px;
+  padding: 12px 18px;
 
-    padding:12px 18px;
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
+  cursor: pointer;
 
-    cursor:pointer;
+  transition: 0.25s;
 
-    transition:.25s;
+  font-size: 16px;
 
-    font-size:16px;
+  font-weight: 600;
 
-    font-weight:600;
-
-    min-height:10px;
-
+  min-height: 46px;
 }
 
-.sched-sem-btn:hover{
+.sched-sem-btn:hover {
+  border-color: #4f8cff;
 
-    border-color:#4f8cff;
-
-    background:#273550;
-
+  background: #273550;
 }
 
-.sched-sem-btn.active{
+.sched-sem-btn.active {
+  background: #2b3d5e;
 
-    background:#2b3d5e;
-
-    border-color:#4f8cff;
-
+  border-color: #4f8cff;
 }
 
-.sched-slot-count{
+.sched-slot-count {
+  color: #8fa8d8;
 
-    color:#8fa8d8;
+  font-size: 14px;
 
-    font-size:14px;
+  margin-left: auto;
 
-    margin-left:auto;
-
-    margin-right:12px;
-
+  margin-right: 12px;
 }
 
-.sched-arrow{
-
-    font-size:16px;
-
+.sched-arrow {
+  font-size: 16px;
 }
 
-.sched-body{
-
-    margin-top:10px;
-
+.sched-body {
+  margin-top: 10px;
 }
 
-.semester-subject-panel{
+.semester-subject-panel {
+  background: #1d2536;
 
-    background:#1d2536;
+  border: 1px solid #34435d;
 
-    border:1px solid #34435d;
+  border-radius: 12px;
 
-    border-radius:12px;
+  padding: 12px;
 
-    padding:12px;
-
-    margin-top:10px;
-
+  margin-top: 10px;
 }
 
-.semester-subject-title{
+.semester-subject-title {
+  font-size: 17px;
 
-    font-size:17px;
+  font-weight: 700;
 
-    font-weight:700;
-
-    margin-bottom:12px;
-
+  margin-bottom: 12px;
 }
 
-.semester-subject-list{
+.semester-subject-list {
+  display: flex;
 
-    display:flex;
+  flex-direction: column;
 
-    flex-direction:column;
-
-    gap:10px;
-
+  gap: 10px;
 }
 
-.semester-subject-row{
+.semester-subject-row {
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
+  background: #242f45;
 
-    background:#242f45;
+  border: 1px solid #33435d;
 
-    border:1px solid #33435d;
+  border-radius: 10px;
 
-    border-radius:10px;
+  padding: 10px 14px;
 
-    padding:10px 14px;
-
-    transition:.2s;
-
+  transition: 0.2s;
 }
 
-.semester-subject-row:hover{
-
-    border-color:#4f8cff;
-
+.semester-subject-row:hover {
+  border-color: #4f8cff;
 }
 
-.semester-subject-main{
+.semester-subject-main {
+  display: flex;
 
-    display:flex;
+  align-items: center;
 
-    align-items:center;
-
-    gap:14px;
-
+  gap: 14px;
 }
 
-.semester-subject-code{
+.semester-subject-code {
+  background: #20293d;
 
-    background:#20293d;
+  border: 1px solid #3a4b69;
 
-    border:1px solid #3a4b69;
+  color: #7cb4ff;
 
-    color:#7cb4ff;
+  padding: 5px 10px;
 
-    padding:5px 10px;
+  border-radius: 7px;
 
-    border-radius:7px;
+  font-size: 12px;
 
-    font-size:12px;
-
-    font-weight:700;
-
+  font-weight: 700;
 }
 
-.semester-subject-name{
+.semester-subject-name {
+  color: #fff;
 
-    color:#fff;
+  font-size: 16px;
 
-    font-size:16px;
-
-    font-weight:600;
-
+  font-weight: 600;
 }
 
-.semester-subject-time{
+.semester-subject-time {
+  background: #234a46;
 
-    background:#234a46;
+  color: #37f3b2;
 
-    color:#37f3b2;
+  padding: 7px 14px;
 
-    padding:7px 14px;
+  border-radius: 20px;
 
-    border-radius:20px;
+  font-size: 13px;
 
-    font-size:13px;
-
-    font-weight:600;
-
+  font-weight: 600;
 }
 
-.semester-subject-time.is-empty{
+.semester-subject-time.is-empty {
+  background: #452d2d;
 
-    background:#452d2d;
-
-    color:#ff8f8f;
-
+  color: #ff8f8f;
 }
 
-.semester-subject-foot{
+.semester-subject-foot {
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
+  margin-top: 14px;
 
-    margin-top:14px;
+  color: #9bb1d2;
 
-    color:#9bb1d2;
-
-    font-size:14px;
-
+  font-size: 14px;
 }
 
-.sched-day-tabs{
+.sched-day-tabs {
+  display: flex;
 
-    display:flex;
+  flex-wrap: wrap;
 
-    flex-wrap:wrap;
+  gap: 8px;
 
-    gap:8px;
-
-    margin:14px 0;
-
+  margin: 14px 0;
 }
 
-.sday-tab{
+.sday-tab {
+  background: #25324a;
 
-    background:#25324a;
+  border: 1px solid transparent;
 
-    border:1px solid transparent;
+  border-radius: 8px;
 
-    border-radius:8px;
+  padding: 8px 16px;
 
-    padding:8px 16px;
+  font-size: 14px;
 
-    font-size:14px;
+  cursor: pointer;
 
-    cursor:pointer;
-
-    transition:.2s;
-
+  transition: 0.2s;
 }
 
-.sday-tab:hover{
-
-    border-color:#4f8cff;
-
+.sday-tab:hover {
+  border-color: #4f8cff;
 }
 
-.sday-tab.active{
+.sday-tab.active {
+  background: #4f8cff;
 
-    background:#4f8cff;
-
-    color:#fff;
-
+  color: #fff;
 }
 
-.sday-cnt{
+.sday-cnt {
+  margin-left: 6px;
 
-    margin-left:6px;
-
-    font-size:12px;
-
+  font-size: 12px;
 }
 
-.sched-slot-list{
+.sched-slot-list {
+  display: flex;
 
-    display:flex;
+  flex-direction: column;
 
-    flex-direction:column;
-
-    gap:14px;
-
+  gap: 14px;
 }
 
-.sched-slot-card{
+.sched-slot-card {
+  background: #20293d;
 
-    background:#20293d;
+  border: 1px solid #34435d;
 
-    border:1px solid #34435d;
+  border-radius: 12px;
 
-    border-radius:12px;
-
-    padding:14px;
-
+  padding: 14px;
 }
 
-.ssc-time{
+.ssc-time {
+  display: flex;
 
-    display:flex;
+  align-items: center;
 
-    align-items:center;
+  gap: 12px;
 
-    gap:12px;
-
-    margin-bottom:14px;
-
+  margin-bottom: 14px;
 }
 
-.ssc-time input{
-
-    width:120px;
-
+.ssc-time input {
+  width: 120px;
 }
 
-.ssc-info{
+.ssc-info {
+  display: grid;
 
-    display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-
-    gap:12px;
-
+  gap: 12px;
 }
 
 .ssc-info input,
-.ssc-info select{
+.ssc-info select {
+  width: 100%;
 
-    width:100%;
+  background: #27324a;
 
-    background:#27324a;
+  border: 1px solid #3b4a67;
 
-    border:1px solid #3b4a67;
+  color: #fff;
 
-    color:#fff;
+  border-radius: 8px;
 
-    border-radius:8px;
+  padding: 10px;
 
-    padding:10px;
-
-    font-size:14px;
-
+  font-size: 14px;
 }
 
-.ssc-del{
+.ssc-del {
+  margin-top: 14px;
 
-    margin-top:14px;
+  background: #ff4d68;
 
-    background:#ff4d68;
+  color: #fff;
 
-    color:#fff;
+  border: none;
 
-    border:none;
+  border-radius: 8px;
 
-    border-radius:8px;
+  padding: 8px 16px;
 
-    padding:8px 16px;
-
-    cursor:pointer;
-
+  cursor: pointer;
 }
 
-.sched-actions{
+.sched-actions {
+  display: flex;
 
-    display:flex;
+  justify-content: flex-end;
 
-    justify-content:flex-end;
+  gap: 10px;
 
-    gap:10px;
-
-    margin-top:16px;
-
+  margin-top: 16px;
 }
 
-.sched-empty-day{
+.sched-empty-day {
+  text-align: center;
 
-    text-align:center;
+  padding: 24px;
 
-    padding:24px;
-
-    color:#8ea3c6;
-
+  color: #8ea3c6;
 }
 
 /* =========================
       RESPONSIVE
 ========================= */
 
-@media(max-width:1100px){
+@media (max-width: 1100px) {
+  .schedule-col {
+    padding: 10px;
+  }
 
-.schedule-col{
-
-padding:10px;
-
+  .ssc-info {
+    grid-template-columns: 1fr;
+  }
 }
 
-.ssc-info{
+@media (max-width: 768px) {
+  .schedule-col-title {
+    font-size: 15px;
+  }
 
-grid-template-columns:1fr;
+  .sched-sem-btn {
+    font-size: 14px;
 
-}
+    padding: 10px 14px;
+  }
 
-}
+  .sched-actions {
+    flex-direction: column;
+  }
 
-@media(max-width:768px){
+  .sched-actions button {
+    width: 100%;
+  }
 
-.schedule-col-title{
+  .ssc-time {
+    flex-direction: column;
 
-font-size:15px;
+    align-items: flex-start;
+  }
 
-}
-
-.sched-sem-btn{
-
-font-size:14px;
-
-padding:10px 14px;
-
-}
-
-.sched-actions{
-
-flex-direction:column;
-
-}
-
-.sched-actions button{
-
-width:100%;
-
-}
-
-.ssc-time{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-}
-
-.ssc-time input{
-
-width:100%;
-
-}
-
+  .ssc-time input {
+    width: 100%;
+  }
 }

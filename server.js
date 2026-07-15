@@ -244,6 +244,9 @@ connectDB()
         env: process.env.NODE_ENV || 'development',
         superAdmin: process.env.SUPER_ADMIN_EMAIL || 'superadmin@sal.com',
       });
+      const sitemapRoute = require("./src/routes/sitemap");
+
+app.use("/", sitemapRoute);
 
       // Keep the developer-friendly banner in non-production only
       if (!isProduction) {

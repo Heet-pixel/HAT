@@ -10,7 +10,9 @@ const Attendance = {
       const d = await API.student.attendance();
       if (!d.success) throw new Error(d.message || 'Failed to load attendance');
       this._data = this._normalize(d);
+      // window.studentAttendance = this._data;
       this._render();
+      // AttendanceChart.load();
     } catch (err) {
       _el('att-content').innerHTML = UI.error(err.message);
     }
